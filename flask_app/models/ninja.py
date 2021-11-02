@@ -22,8 +22,8 @@ class Ninja:
 
     @classmethod
     def getAllNinjas(cls,id):
-        #query = f"SELECT * FROM ninjas WHERE dojo_id = {id}"
-        query = "SELECT * FROM ninjas AS n INNER JOIN dojos AS d WHERE n.dojo_id = %(id)s ORDER BY n.dojo_id LIMIT 1"
+        
+        query = "SELECT * FROM ninjas WHERE dojo_id = %(id)s"
         data = {
             "id": id
         }

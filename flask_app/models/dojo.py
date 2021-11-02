@@ -31,8 +31,11 @@ class Dojo:
         return dojos
 
     @classmethod
-    def getDojoName(cls,data):
+    def getDojoName(cls,id):
         query = "SELECT name FROM dojos WHERE id = %(id)s;"
+        data = {
+            "id": id
+        }
         return connectToMySQL("dojosandninjas").query_db(query,data)
         
     
